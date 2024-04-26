@@ -14,7 +14,7 @@ def sort_by_name(people):
 
 
 def sort_by_name_then_age(people):
-    return sorted(people, key=lambda person: (person.name, person.age))
+    return sorted(people, key=attrgetter("name", "age"))
 
 
 def sort_by_name_then_decreasing_age(people):
