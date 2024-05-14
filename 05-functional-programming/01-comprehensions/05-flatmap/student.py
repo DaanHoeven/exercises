@@ -10,11 +10,11 @@ def actors(movies):
 
 
 def repeat_consecutive(xs, n):
-    return [x for x in xs for i in range(n)]
+    return [x for x in xs for k in range(n)]
 
 
 def repeat_alternating(xs, n):
-    return [x for i in range(n) for x in xs]
+    return [x for k in range(n) for x in xs]
 
 
 def cards(values, suits):

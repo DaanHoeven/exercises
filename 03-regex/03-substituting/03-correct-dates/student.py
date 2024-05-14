@@ -1,9 +1,11 @@
-# Write your code here
 import re
+
+string = "2/1/2000 bla bla 12/13/20001 , 2/1/2000"
 
 
 def correct_dates(string):
-    return re.sub(r"(\d+)/(\d+)/(\d+)", r"\2/\1/\3", string)
+    dates_found = re.sub(r"(\b\d{1,2})\/(\d{1,2})\/(\d*\b)", r"\2/\1/\3", string)
+    return dates_found
 
 
-print(correct_dates("1/2/3"))  # Output: 2/1/3
+print(correct_dates(string))

@@ -28,28 +28,28 @@ class ShoppingList:
 
 class Item:
     def __init__(self, name, price):
-        self.name = name
-        self.price = price
+        self.__name = name
+        self.__price = price
 
-    def can_be_sold_to(self, owner):
+    @property
+    def name(self):
+        return self.__name
+
+    @property
+    def price(self):
+        return self.__price
+
+    def can_be_sold_to(self, customer):
         return True
 
 
 class AgeRestrictedItem(Item):
-    def __init__(self, name, price):
-        super().__init__(name, price)
 
-    def can_be_sold_to(self, owner):
-        if owner.age < 18:
-            return False
-        return True
+    def can_be_sold_to(self, customer):
+        return customer.age >= 18
 
 
 class CountryRestrictedItem(Item):
-    def __init__(self, name, price):
-        super().__init__(name, price)
 
-    def can_be_sold_to(self, owner):
-        if owner.country == "Arstotzka":
-            return False
-        return True
+    def can_be_sold_to(self, customer):
+        return customer.country != "Arstotzka"

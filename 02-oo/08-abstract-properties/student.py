@@ -3,14 +3,17 @@ from abc import ABC, abstractmethod
 
 
 class Shape(ABC):
-    @property
-    @abstractmethod
-    def perimeter(self):
+    def __init__(self):
         pass
 
     @property
     @abstractmethod
-    def area(self):
+    def area():
+        pass
+
+    @property
+    @abstractmethod
+    def perimeter(self):
         pass
 
 

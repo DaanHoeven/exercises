@@ -9,10 +9,12 @@ class A(ABC):
         self.c()
 
     @abstractmethod
-    def b(self): ...
+    def b(self):
+        pass
 
     @abstractmethod
-    def c(self): ...
+    def c(self):
+        pass
 
 
 class B(A):
@@ -33,7 +35,8 @@ class D(A):
         self.f()
 
     @abstractmethod
-    def f(self): ...
+    def f(self):
+        pass
 
 
 class E(D):
@@ -53,6 +56,9 @@ class F(ABC):
         self.f()
 
     @abstractmethod
-    def b(self): ...
+    def b(self):
+        pass
 
-    def f(self): ...
+    @abstractmethod
+    def f(self):
+        pass

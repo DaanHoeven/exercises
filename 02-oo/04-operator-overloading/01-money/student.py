@@ -4,17 +4,16 @@ class Money:
         self.currency = currency
 
     def __add__(self, other):
-        if self.currency != other.currency:
-            raise RuntimeError("Mismatched currencies!")
-        else:
+        if self.currency == other.currency:
             return Money(self.amount + other.amount, self.currency)
+        else:
+            raise RuntimeError("Mismatched currencies!")
 
     def __sub__(self, other):
-        if self.currency != other.currency:
-            raise RuntimeError("Mismatched currencies!")
-        else:
+        if self.currency == other.currency:
             return Money(self.amount - other.amount, self.currency)
+        else:
+            raise RuntimeError("Mismatched currencies!")
 
-    def __mul__(self, factor):
-
-        return Money(self.amount * factor, self.currency)
+    def __mul__(self, multiplier):
+        return Money(self.amount * multiplier, self.currency)

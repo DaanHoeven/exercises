@@ -15,10 +15,10 @@ class Archer(Human):
         return self.__num_arrows
 
     def use_arrows(self, num):
-        if num > self.__num_arrows:
-            raise Exception("Not enough arrows")
-        else:
+        if self.__num_arrows >= num:
             self.__num_arrows -= num
+        else:
+            raise ValueError("Not enough arrows")
 
 
 class Crossbowman(Archer):
